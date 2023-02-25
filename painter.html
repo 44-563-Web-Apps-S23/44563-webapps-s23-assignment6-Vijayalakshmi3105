@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Painter Infomation Page</title>
+</head>
+
+<body>
+
+    <h2>Sankati Vijayalakshmi Painter entry</h2>
+
+    <form>
+        <label for="form_PainterName">The hidden painter name</label>
+        <input type="password" id="form_PainterName" name="form_PainterName" min=10 max=50 step=2 value="Monet"> <br>
+
+        <label for="form_GuessPainter">Guess the painter</label>
+        <input type="text" id="form_GuessPainter" name="form_GuessPainter" autofocus> <br>
+
+        <input type="button" onclick="checkPainter()" value="check the guess">
+    </form>
+
+
+    <p id="result">This text will be replaced </p>
+
+    <script>
+        let good = 0;
+        let oops = 0;
+        function checkPainter() {
+            hiddenpainter = document.getElementById("form_PainterName").value;
+            guesspainter = document.getElementById("form_GuessPainter").value;
+            if (hiddenpainter == guesspainter) {
+
+                document.getElementById("result").innerHTML = good;
+                alert("You got it right");
+            }
+            else {
+                document.getElementById("result").innerHTML = good;
+                alert("Sorry")
+            }
+        }
+    </script>
+
+</body>
+
+</html>
