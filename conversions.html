@@ -30,7 +30,7 @@
             for (let i = 1; i <= 5; i++) {
                 console.log(2 ** i);
 
-                toShow = 'value' + toShow + base + ' is ' + Math.round(baseElement * convElement * 100) / 100 + 'converted value; ';
+                toShow = toShow + baseElement + ' is ' + Math.round(baseElement * convElement * 100) / 100 + ';';
                 baseElement = base1 * (2 ** i);
 
             }
@@ -52,11 +52,41 @@
             <label for="min">Min</label><br>
     </form>
 
-
     <input type="button" class="btn btn-primary" onclick="chooseOp()" value="Get values from radio group">
-    </form>
     <p id="result1">Radio Buttons</p>
     </div>
+
+    <script>
+        function chooseOp() {
+            var baseElement = document.getElementById("base_element").value;
+            var convElement = document.getElementById("conversion_element").value;
+            var res = document.querySelector('input[name="action"]:checked').value;
+            console.log('operation', res);
+            console.log('conversion', convElement);
+            var base1 = baseElement;
+            if (res == 'minimum') {
+                document.getElementById("result1").innerHTML = 'Min of ' + baseElement + ' and ' + convElement + ' is ' + Math.min(baseElement, convElement);
+            }
+            else if (res == 'maximum') {
+                document.getElementById("result1").innerHTML = 'Max of ' + baseElement + ' and ' + convElement + ' is ' + Math.max(baseElement, convElement);
+            } else if (res == 'mean') {
+                document.getElementById("result1").innerHTML = 'Mean of ' + baseElement + ' and ' + convElement + ' is ' + (parseInt(baseElement) + parseInt(convElement)) / 2;
+            }
+
+            document.getElementById("result").innerHTML = 'Conversions are: ' + toShow;
+
+        }
+
+    </script>
+
+
+
+
+
+
+
+
+
 
 
 
