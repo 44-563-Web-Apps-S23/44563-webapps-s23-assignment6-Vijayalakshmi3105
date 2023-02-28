@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
 <head>
     <title>Painter Infomation Page</title>
 </head>
@@ -22,6 +24,7 @@
     <script>
         var good = 0;
         var oops = 0;
+        var counter=0;
         function checkPainter() {
             console.log("Getting form values")
             hiddenpainter = document.getElementById("form_PainterName").value;
@@ -34,31 +37,38 @@
                 out.innerHTML = good;
             }
             else {
+                counter=counter+1;
                 oops = oops + 1;
                 alert("Sorry")
                 out.innerHTML = oops;
+            }
+            if(counter>10)
+            {
+                out.innerHTML='Sorry , ran out of guesses. ';
+
             }
 
         }
     </script>
 
     <div class="container">
-        <img id="Plant-Image" width="100" height="100" alt="Picture of a plant" src="TigerLily.jpg" onclick="selectImage()">
+        <img id="Plant-Image" width="100" height="100" alt="Picture of a plant" src="TigerLily.jpg"
+            onclick="selectImage()">
     </div>
 
     <script>
-        var useImage=1;
+        var useImage = 1;
         function selectImage() {
 
             switch (useImage) {
                 case 1:
-                    useImage = 2; document.getElementById("Plant-Image").src = "Abelia.jpg"; 
+                    useImage = 2; document.getElementById("Plant-Image").src = "Abelia.jpg";
                     break;
                 case 2:
-                    useImage = 3; document.getElementById("Plant-Image").src = "Nemophila.jpg"; 
+                    useImage = 3; document.getElementById("Plant-Image").src = "Nemophila.jpg";
                     break;
                 case 3:
-                    useImage = 1; document.getElementById("Plant-Image").src = "TigerLily.jpg"; 
+                    useImage = 1; document.getElementById("Plant-Image").src = "TigerLily.jpg";
                     break;
 
 
